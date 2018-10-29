@@ -155,6 +155,6 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/worti/Documents/Wildcodeschool/symfony/blog/templates/base.html.twig");
+", "base.html.twig", "/home/worti/Documents/Wildcodeschool/symfony/quete2/templates/base.html.twig");
     }
 }

@@ -1,1 +1,15 @@
 3f2d8b,127.0.0.1,GET,http://127.0.0.1:8000/,1540393892,,404
+3de1de,127.0.0.1,GET,http://localhost:8000/,1540841695,,404
+8557b2,127.0.0.1,GET,http://localhost:8000/,1540842027,,404
+32d882,127.0.0.1,GET,http://localhost:8000/lucky/number,1540842037,e607bb,200
+e607bb,127.0.0.1,GET,http://localhost:8000/lucky/number,1540842037,,404
+e09aca,127.0.0.1,GET,http://localhost:8000/Lucky/number,1540842045,7c68b3,200
+7c68b3,127.0.0.1,GET,http://localhost:8000/Lucky/number,1540842045,,404
+db76dd,127.0.0.1,GET,http://localhost:8000/Lucky,1540842069,6a2706,200
+6a2706,127.0.0.1,GET,http://localhost:8000/Lucky,1540842069,,404
+24de2b,127.0.0.1,GET,http://localhost:8000/lucky,1540842080,,200
+434f2b,127.0.0.1,GET,http://localhost:8000/,1540842367,,200
+5aa3f7,127.0.0.1,GET,http://localhost:8000/,1540842438,a9bd02,200
+a9bd02,127.0.0.1,GET,http://localhost:8000/,1540842438,,500
+4e4986,127.0.0.1,GET,http://localhost:8000/,1540842446,0d2c2f,200
+0d2c2f,127.0.0.1,GET,http://localhost:8000/,1540842446,,500
