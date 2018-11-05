@@ -20,7 +20,8 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
-        'app_blog_list' => array(array(), array('_controller' => 'App\\Controller\\BlogController::list'), array(), array(array('text', '/blog/')), array(), array()),
+        'app_blog_index' => array(array(), array('_controller' => 'App\\Controller\\BlogController::index'), array(), array(array('text', '/blog/')), array(), array()),
+        'blog_list' => array(array('page'), array('_controller' => 'App\\Controller\\BlogController::list'), array('page' => '\\d+'), array(array('variable', '/', '\\d+', 'page'), array('text', '/blog')), array(), array()),
         'blog_show' => array(array('slug'), array('_controller' => 'App\\Controller\\BlogController::show'), array('slug' => '[a-z0-9\\-]+'), array(array('variable', '/', '[a-z0-9\\-]+', 'slug'), array('text', '/blog')), array(), array()),
         'home' => array(array(), array('_controller' => 'App\\Controller\\HomeController::index'), array(), array(array('text', '/')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),

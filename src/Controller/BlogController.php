@@ -11,11 +11,25 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/")
      */
-    public function list()
+    public function index()
+
     {
         $slug = "Article Sans Titre";
         return $this->render('blog/index.html.twig', ['slug' => $slug]);
     }
+
+
+
+    /**
+ * @Route("/blog/{page}", requirements={"page"="\d+"}, name="blog_list")
+ */
+    public function list($page)
+
+    {
+        $slug = $page;
+        return $this->render('blog/index.html.twig', ['page' => $page, 'slug' => $slug]);
+    }
+
 
 
     /**
