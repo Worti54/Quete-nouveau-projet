@@ -9,12 +9,21 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello WCS</h1>
+    <h1>Articles order by category</h1>
 
-    This friendly message is coming from:
+    {% for category in categories %}
     <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+        <li><h2>{{ category.name }}</h2>
+            {% for article in category.articles %}
+            <ul>
+                <li><h3>{{ article.title }}</h3>
+                    <p>{{ article.content }}</p>
+                </li>
+            </ul>
+            {% endfor %}
+        </li>
+
     </ul>
+    {% endfor %}
 </div>
 {% endblock %}

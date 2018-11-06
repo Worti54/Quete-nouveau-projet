@@ -77,20 +77,52 @@ class __TwigTemplate_07e5c91cf37207258040b2b411224fe998bb4cd25c078669b30af5441bc
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello WCS</h1>
+    <h1>Articles order by category</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("src/Controller/HomeController.php", 0), "html", null, true);
-        echo "\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("templates/home/index.html.twig", 0), "html", null, true);
-        echo "\">templates/home/index.html.twig</a></code></li>
+    ";
+        // line 14
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new Twig_Error_Runtime('Variable "categories" does not exist.', 14, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 15
+            echo "    <ul>
+        <li><h2>";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
+            echo "</h2>
+            ";
+            // line 17
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["category"], "articles", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+                // line 18
+                echo "            <ul>
+                <li><h3>";
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", array()), "html", null, true);
+                echo "</h3>
+                    <p>";
+                // line 20
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", array()), "html", null, true);
+                echo "</p>
+                </li>
+            </ul>
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 24
+            echo "        </li>
+
     </ul>
-</div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 28
+        echo "</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -112,7 +144,7 @@ class __TwigTemplate_07e5c91cf37207258040b2b411224fe998bb4cd25c078669b30af5441bc
 
     public function getDebugInfo()
     {
-        return array (  90 => 17,  86 => 16,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
+        return array (  125 => 28,  116 => 24,  106 => 20,  102 => 19,  99 => 18,  95 => 17,  91 => 16,  88 => 15,  84 => 14,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -128,13 +160,22 @@ class __TwigTemplate_07e5c91cf37207258040b2b411224fe998bb4cd25c078669b30af5441bc
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello WCS</h1>
+    <h1>Articles order by category</h1>
 
-    This friendly message is coming from:
+    {% for category in categories %}
     <ul>
-        <li>Your controller at <code><a href=\"{{ 'src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>
+        <li><h2>{{ category.name }}</h2>
+            {% for article in category.articles %}
+            <ul>
+                <li><h3>{{ article.title }}</h3>
+                    <p>{{ article.content }}</p>
+                </li>
+            </ul>
+            {% endfor %}
+        </li>
+
     </ul>
+    {% endfor %}
 </div>
 {% endblock %}
 ", "home/index.html.twig", "/home/worti/Documents/Wildcodeschool/symfony/quete2/templates/home/index.html.twig");
